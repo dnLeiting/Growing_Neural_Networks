@@ -1,0 +1,32 @@
+# Settings
+wandb: True
+plot: True
+
+# WandB
+project-name : 'milestone-two'
+
+# Methods
+when_type: 'predefined'
+where_type: 'add_5'
+how_type: 'autogrow_zeroinit'
+grow_neu_type: 'adding'
+grow_lay_type: 'baseline'
+
+# Dataset
+dataset: 'mnist'
+num_classes: 10
+batch_size: 128
+split_rate: [80, 19, 1]
+
+# Training
+epochs: 5
+max_epochs: 4
+seed: 42
+max_training: 5
+optimiser: 'Adam'
+init_architecture: [5, 5, 5, 5, 5]
+activation_function: 'relu'
+model_type: 'MLP'
+learning_step: 0.001
+loss_function: 'SparseCategoricalCrossentropy'
+metric: 'SparseCategoricalAccuracy'

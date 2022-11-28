@@ -1,0 +1,34 @@
+
+optimizer : 'Adam'
+lr : 0.001
+loss_fn : 'MeanSquaredError'
+
+gm_update_mode : 'out'
+hw_loss_fn : 'MeanSquaredError'
+hw_lr : 0.01
+
+
+seed : 42
+wandb : True
+
+# dataset
+num_train_ds : 1_500
+num_test_ds : 5_00
+batch_size : 32
+shuffle_buffer : 100
+val_split : 0.33
+
+# Architectures
+teacher : [20,10,10]
+small_baseline : [20,5,10]
+big_baseline : [20,10,10]
+seed_arch : [20,[5],10] # hidden need to be list!
+
+# Training
+max_epoch : 20
+schedule : [2,5,8,11,14] # used to decide whether to grow or not (list contains the epochs in which we grow one neuron to the hidden layer)
+
+grow_neu_type : 'adding_auto_lite' #'adding_it_gradmax' adding
+how_type : 'random_baseline'
+
+metric : 'MeanSquaredError'

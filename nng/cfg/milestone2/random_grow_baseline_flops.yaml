@@ -1,0 +1,34 @@
+# Settings
+wandb: True
+plot: False
+
+# WandB
+project-name : 'milestone2-final-layer_growth'
+
+# Methods
+when_type: 'vallloss_flops'
+where_type: 'add_5_with_random_layer'
+how_type: 'random_baseline'
+grow_neu_type: 'adding'
+grow_lay_type: 'baseline'
+
+# Dataset
+dataset: 'mnist'
+num_classes: 10
+batch_size: 128
+split_rate: [80, 19, 1]
+
+# Training
+epochs: 5
+max_epochs: 4
+seed: 42
+max_training: 5
+neuron_growth: 10
+growing_threshold_flops: 0.2
+optimiser: 'Adam'
+init_architecture: [5]
+activation_function: 'relu'
+model_type: 'MLP'
+learning_step: 0.001
+loss_function: 'SparseCategoricalCrossentropy'
+metric: 'SparseCategoricalAccuracy'

@@ -1,0 +1,33 @@
+# Settings
+wandb: True
+plot: True
+
+# WandB
+project_name : 'convergent_when-autogrow_where'
+run_name: "fashion_mnist-uniInit_small"
+
+# Methods
+when_type: 'always'
+where_type: 'autogrow'
+how_type: 'autogrow_uniinit'
+grow_neu_type: 'adding'
+grow_lay_type: 'baseline'
+
+# Training
+epochs: 5 # Also K in autogrow where
+max_epochs: 4
+seed: 42
+init_architecture: [5, 5, 5, 5, 5]
+learning_step: 0.001
+
+# Autogrow
+where_autogrow_policy: 'ConvergentGrowth'
+tau: 0.01
+J: 15 # Remember to keep it bigger than epochs!
+neurons_to_grow: 5
+
+# Dataset
+dataset: 'fashion_mnist'
+num_classes: 10
+batch_size: 128
+split_rate: [80, 19, 1]

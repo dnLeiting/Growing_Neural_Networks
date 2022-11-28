@@ -1,0 +1,35 @@
+# Settings
+wandb: True
+plot: True
+normalized: True
+
+# WandB
+project_name : 'autogrow_where-periodic'
+run_name: "normalized-gradmax"
+
+# Methods
+when_type: 'always'
+where_type: 'autogrow'
+how_type: 'random_baseline'
+grow_neu_type: 'adding_it_gradmax'
+grow_lay_type: 'baseline'
+
+# Training
+epochs: 10 # Also K in autogrow where
+max_epochs: 4
+seed: 42
+init_architecture: [5, 5, 5, 5, 5]
+learning_step: 0.001
+
+# Autogrow
+where_autogrow_policy: 'PeriodicGrowth'
+tau: 0.01
+J: 15 # Remember to keep it bigger than epochs!
+neurons_to_grow: 10
+
+# GradMax / Autogrow-lite
+gm_update_mode : 'out' # which layer gets updated
+hw_lr : 0.01
+hw_constraint : null
+hw_batch_size : 1000
+hw_max_it : 75

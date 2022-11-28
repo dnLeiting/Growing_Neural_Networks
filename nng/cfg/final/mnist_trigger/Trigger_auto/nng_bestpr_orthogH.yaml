@@ -1,0 +1,58 @@
+# Settings
+wandb: True
+plot: True
+
+# WandB
+project_name : '[Trg]best practice <nng> orthog_h'
+
+
+# Methods
+when_type: 'predefined'  # set blow in training
+where_type: 'Trigger'
+how_type: 'random_baseline' # only used when grow_neu_type <adding>
+grow_neu_type: 'adding_firefly' # best according to tests
+grow_lay_type: 'idempotent'
+# GradMax / Autogrow-lite
+gm_update_mode : 'in' # which layer gets updated 'in' 'out' 'both'
+hw_lr : 0.1
+hw_constraint : null
+hw_batch_size : 1000
+hw_max_it : 75
+
+# ANN Trigger
+trigger_type : 'orthog_h' # 'efctdim_w' 'efctdim_h' 'orthog_h' 'orthog_w'
+thr_reg : 0.8  # for setting the init_thr 
+efct_dim_thr : 0.01  # thresh. for which singular values are counted
+with_lays : False # switch for layer genesis
+exp_thr : 200 # in [1,100] thr for how many neurons (in percent) to add before layergenesis 
+
+
+# Dataset
+dataset: 'mnist'
+num_classes: 10
+batch_size: 128
+split_rate: [80, 19, 1]
+
+
+# Training
+epochs: 1 # how long train is training
+max_epochs: 100 # nr of {training -> growing} loops
+# Training epoch = epochs x (1 + max_epochs) e.g. 5 * (1 + 9) = 50
+seed: 42
+growing: True # !!!!!!!!! < BASELINE!!!!
+neuron_growth: 10
+max_training: 1 # after "predefined-where" will automatically be true
+optimiser: 'Adam'
+init_architecture: [150] # init hidden layers (in and out not set here)
+activation_function: 'relu'
+model_type: 'MLP'
+learning_step: 0.002
+loss_function: 'SparseCategoricalCrossentropy'
+metric: 'SparseCategoricalAccuracy'
+
+
+
+
+
+
+

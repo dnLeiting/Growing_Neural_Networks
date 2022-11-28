@@ -1,0 +1,36 @@
+# Settings
+wandb: True
+plot: True
+
+# WandB
+project_name : 'flops_when-periodic_layer_where'
+run_name: "fashion_mnist-uniInit_small"
+
+# Methods
+when_type: 'vallloss_flops'
+where_type: 'add_n_with_random_layer'
+how_type: 'autogrow_uniinit'
+grow_neu_type: 'adding'
+grow_lay_type: 'baseline'
+
+# Dataset
+dataset: 'fashion_mnist'
+num_classes: 10
+batch_size: 128
+split_rate: [80, 19, 1]
+
+# Training
+epochs: 5
+max_epochs: 4
+growing: True
+max_training: 5
+neuron_growth: 5
+seed: 42
+optimiser: 'Adam'
+init_architecture: [5]
+activation_function: 'relu'
+model_type: 'MLP'
+learning_step: 0.001
+loss_function: 'SparseCategoricalCrossentropy'
+metric: 'SparseCategoricalAccuracy'
+growing_threshold_flops: 0.2

@@ -1,0 +1,37 @@
+# Settings
+wandb: True
+plot: True
+normalized: True
+
+# WandB
+project_name : 'loss_when-periodic_layer_where'
+run_name: "normalized-guaInit"
+
+# Methods
+when_type: 'vallloss_epochs'
+where_type: 'add_n_with_random_layer'
+how_type: 'autogrow_gauinit'
+grow_neu_type: 'adding'
+grow_lay_type: 'baseline'
+
+# Dataset
+dataset: 'mnist'
+num_classes: 10
+batch_size: 128
+split_rate: [80, 19, 1]
+
+# Training
+epochs: 10
+max_epochs: 4
+growing: True
+max_training: 10
+neuron_growth: 10
+seed: 42
+optimiser: 'Adam'
+init_architecture: [5]
+activation_function: 'relu'
+model_type: 'MLP'
+learning_step: 0.001
+loss_function: 'SparseCategoricalCrossentropy'
+metric: 'SparseCategoricalAccuracy'
+growing_threshold_epochs: 0.05

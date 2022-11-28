@@ -1,0 +1,43 @@
+# Settings
+wandb: True
+plot: True
+
+# WandB
+project_name : 'convergent_when-periodic_layer_where'
+run_name: "fashion_mnist-adamInit_small"
+
+# Methods
+when_type: 'autogrow'
+where_type: 'add_n_with_random_layer'
+how_type: 'random_baseline'
+grow_neu_type: 'adding_auto_lite'
+grow_lay_type: 'baseline'
+
+# GradMax / Autogrow-lite
+gm_update_mode : 'out' # which layer gets updated
+hw_lr : 0.01
+hw_constraint : null
+hw_batch_size : 1000
+hw_max_it : 75
+
+# Dataset
+dataset: 'fashion_mnist'
+num_classes: 10
+batch_size: 128
+split_rate: [80, 19, 1]
+
+# Training
+epochs: 5
+max_epochs: 4
+growing: True
+max_training: 5
+neuron_growth: 5
+seed: 42
+optimiser: 'Adam'
+init_architecture: [5]
+activation_function: 'relu'
+model_type: 'MLP'
+learning_step: 0.001
+loss_function: 'SparseCategoricalCrossentropy'
+metric: 'SparseCategoricalAccuracy'
+val_sparse_categorical_accuracy: 0.06
